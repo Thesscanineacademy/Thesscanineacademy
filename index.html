@@ -49,21 +49,22 @@
 
         /* Container για να γίνει η εικόνα κύκλος */
         .logo-container {
-            width: 70px; 
-            height: 70px; 
-            overflow: hidden; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-        }
+    width: 60px;          /* Μίκρυνα λίγο το "κύκλο" */
+    height: 60px; 
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #000; /* Μαύρο φόντο αν η εικόνα αργήσει να φορτώσει */
+}
 
-        .site-logo {
-            width: 140px; 
-            height: auto;
-            display: block;
-            transform: translateY(-8px); 
-        }
+.site-logo {
+    width: 180px;         /* Μεγάλωσα το πλάτος για να γίνει ZOOM στην εικόνα */
+    height: auto;
+    display: block;
+    transform: translateY(5px); /* Μετακίνησε την εικόνα πάνω-κάτω μέχρι να εξαφανιστούν τα γράμματα */
+}
 
         .logo-text {
             font-size: 1.5rem;
