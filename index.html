@@ -47,6 +47,7 @@
             text-decoration: none;
         }
 
+        /* Container για να γίνει η εικόνα κύκλος */
         .logo-container {
             width: 70px; 
             height: 70px; 
@@ -92,7 +93,10 @@
 
         .carousel-slide {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             opacity: 0;
             transition: opacity 1s ease-in-out;
             background-size: cover;
@@ -103,7 +107,10 @@
 
         .hero-overlay {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(0, 0, 0, 0.6);
             display: flex;
             flex-direction: column;
@@ -182,6 +189,8 @@
             position: relative;
         }
 
+        .play-icon { font-size: 30px; color: var(--primary-gold); }
+
         .article-card h3 { color: var(--primary-gold); margin-top: 0; }
         
         .full-content {
@@ -206,21 +215,40 @@
         }
 
         input, textarea {
-            width: 100%; padding: 15px; margin-bottom: 15px;
-            background-color: #0d0d0d; border: 1px solid #444; color: #fff;
-            box-sizing: border-box; font-family: inherit;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #0d0d0d;
+            border: 1px solid #444;
+            color: #fff;
+            box-sizing: border-box;
+            font-family: inherit;
         }
 
         button[type="submit"] {
-            width: 100%; padding: 15px; background-color: var(--primary-gold);
-            border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; color: #000;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-gold);
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            color: #000;
         }
 
         footer {
-            background-color: #000; padding: 40px; text-align: center; font-size: 0.9rem; color: #777;
+            background-color: #000;
+            padding: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
         }
 
-        .social-links a { margin: 0 10px; color: var(--primary-gold); font-weight: bold; }
+        .social-links a {
+            margin: 0 10px;
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
 
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 15px; }
@@ -254,6 +282,7 @@
         <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
         <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
         <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1625316708582-7c38734c3121?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+
         <div class="hero-overlay">
             <h1>Thess Canine Academy</h1>
             <p>Ακρίβεια. Πειθαρχία. Αποτέλεσμα.</p>
@@ -313,17 +342,17 @@
         <p style="margin-bottom:30px; color:#aaa;">Μιλάμε με πράξεις. Δείτε τα αποτελέσματα της δουλειάς μας.</p>
         <div class="grid">
             <div class="card">
-                <div class="video-box">▶</div>
+                <div class="video-box"><span class="play-icon">▶</span></div>
                 <h3>Περπατάμε μαζί</h3>
                 <p>Περπατάμε μαζί στο κέντρο πόλης.</p>
             </div>
             <div class="card">
-                <div class="video-box">▶</div>
+                <div class="video-box"><span class="play-icon">▶</span></div>
                 <h3>Εντολή θέσης</h3>
                 <p>Απόλυτη ακινησία και ηρεμία ενώ υπάρχουν περισπασμοί.</p>
             </div>
             <div class="card">
-                <div class="video-box">▶</div>
+                <div class="video-box"><span class="play-icon">▶</span></div>
                 <h3>Διόρθωση Αντίδρασης</h3>
                 <p>Σκύλος που γαύγιζε σε άλλους σκύλους, τώρα περνάει αδιάφορος.</p>
             </div>
@@ -333,13 +362,15 @@
     <section id="articles" style="background-color: var(--section-bg);">
         <h2>Τροφή για Σκέψη</h2>
         <div class="grid">
+            
             <article class="card article-card">
                 <h3>Κοινωνικοποίηση δεν σημαίνει "παιχνίδι".</h3>
                 <p>Πολλοί πιστεύουν ότι κοινωνικός σκύλος είναι αυτός που παίζει με όλους. Λάθος.</p>
                 <button onclick="toggleArticle(this)" class="read-toggle-btn">ΔΙΑΒΑΣΤΕ ΤΟ ΑΡΘΡΟ ▼</button>
                 <div class="full-content">
                     <p>Κοινωνικοποίηση σημαίνει ο σκύλος να μπορεί να υπάρχει ήρεμος και αδιάφορος δίπλα σε άλλους σκύλους και ερεθίσματα, χωρίς να αντιδρά.</p>
-                    <p>Όταν αφήνουμε τον σκύλο να "χαιρετήσει" τους πάντες, συχνά δημιουργούμε αντιδραστικότητα και άγχος. Στόχος είναι η ουδετερότητα, όχι η υπερβολική χαρά.</p>
+                    <p>Όταν αφήνουμε τον σκύλο να "χαιρετήσει" τους πάντες, συχνά δημιουργούμε αντιδραστικότητα και άγχος.</p>
+                    <p>Στόχος είναι η ουδετερότητα, όχι η υπερβολική χαρά.</p>
                 </div>
             </article>
 
@@ -349,19 +380,22 @@
                 <button onclick="toggleArticle(this)" class="read-toggle-btn">ΔΙΑΒΑΣΤΕ ΤΟ ΑΡΘΡΟ ▼</button>
                 <div class="full-content">
                     <p>Ο σκύλος σας εκπαιδεύεται κάθε στιγμή που ζει μαζί σας — όχι μόνο όταν «κάνετε εκπαίδευση». Κάθε βλέμμα, κάθε αντίδραση, κάθε φορά που επιτρέπετε ή αποτρέπετε μια συμπεριφορά, του διδάσκει τι ισχύει στον κόσμο του.</p>
-                    <p>Η καθημερινότητα είναι το πραγματικό εκπαιδευτικό πεδίο. Στην Thess Canine Academy σας μαθαίνουμε πώς να γίνετε συνειδητός καθοδηγητής.</p>
+                    <p>Όταν τραβάει το λουρί και συνεχίζετε να περπατάτε, όταν γαβγίζει και του δίνετε προσοχή, όταν αγχώνεται και τον χαϊδεύετε για να «ηρεμήσει», όλα αυτά είναι μαθήματα. Η καθημερινότητα είναι το πραγματικό εκπαιδευτικό πεδίο.</p>
+                    <p>Στην Thess Canine Academy σας μαθαίνουμε πώς να γίνετε συνειδητός καθοδηγητής του σκύλου σας, ώστε κάθε αλληλεπίδραση να χτίζει σωστή συμπεριφορά, σταθερότητα και εμπιστοσύνη — όχι σύγχυση ή ανεπιθύμητες συνήθειες.</p>
                 </div>
             </article>
 
             <article class="card article-card">
                 <h3>Σεβασμός ή Φόβος;</h3>
-                <p>Πολλοί διστάζουν να διορθώσουν τον σκύλο τους γιατί θεωρούν ότι θα τους φοβάται.</p>
+                <p>Πολλοί διστάζουν να διορθώσουν τον σκύλο τους γιατί θεωρούν ότι θα τους φοβάται. Αυτό είναι ένα τεράστιο λάθος.</p>
                 <button onclick="toggleArticle(this)" class="read-toggle-btn">ΔΙΑΒΑΣΤΕ ΤΟ ΑΡΘΡΟ ▼</button>
                 <div class="full-content">
                     <p>Υπάρχει τεράστια διαφορά ανάμεσα στον σεβασμό και τον φόβο. Ο σεβασμός κερδίζεται μέσω της συνέπειας, της ηρεμίας και της δικαιοσύνης.</p>
-                    <p>Όταν βάζετε ένα όριο και το τηρείτε, ο σκύλος μαθαίνει να σας σέβεται και νιώθει ασφαλής δίπλα σας.</p>
+                    <p>Όταν βάζετε ένα όριο (π.χ. "μην πηδάς πάνω μου"), και το τηρείτε κάθε φορά, ο σκύλος μαθαίνει να σας σέβεται. Όταν του φωνάζετε τη μία μέρα και την άλλη τον αφήνετε να το κάνει, τότε δημιουργείτε σύγχυση.</p>
+                    <p>Ένας σκύλος που σέβεται τον ιδιοκτήτη του νιώθρι ασφαλής δίπλα του.</p>
                 </div>
             </article>
+
         </div>
     </section>
 
@@ -369,14 +403,18 @@
         <h2>Επικοινωνήστε Μαζί Μας</h2>
         <div class="grid">
             <div>
+                <p style="font-size:1.2rem; margin-bottom:20px;">Είστε έτοιμοι να αλλάξετε τη σχέση σας με τον σκύλο σας;</p>
                 <p><strong>Τηλέφωνο:</strong> +30 6976449651</p>
                 <p><strong>Email:</strong> thesscanineacademy@gmail.com</p>
+                <br>
+                <h3>Social Media</h3>
                 <div class="social-links">
                     <a href="https://www.facebook.com/profile.php?id=61585850593453" target="_blank">Facebook</a> |
                     <a href="https://www.instagram.com/thess_canine_academy/" target="_blank">Instagram</a> |
                     <a href="https://www.tiktok.com/@thesscanineacademy" target="_blank">TikTok</a>
                 </div>
             </div>
+            
             <form action="https://formspree.io/f/mjgknaoq" method="POST">
                 <input type="text" name="name" placeholder="Το Όνομά σας" required>
                 <input type="email" name="email" placeholder="Το Email σας" required>
@@ -388,9 +426,12 @@
         </div>
     </section>
 
-    <footer>&copy; 2025 Thess Canine Academy. All Rights Reserved.</footer>
+    <footer>
+        &copy; 2025 Thess Canine Academy. All Rights Reserved.
+    </footer>
 
     <script>
+        // Carousel Logic
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-slide');
         function nextSlide() {
@@ -400,6 +441,7 @@
         }
         setInterval(nextSlide, 4000);
 
+        // Article Toggle Logic
         function toggleArticle(btn) {
             const content = btn.nextElementSibling;
             if (content.style.display === "block") {
@@ -411,5 +453,6 @@
             }
         }
     </script>
+
 </body>
 </html>
