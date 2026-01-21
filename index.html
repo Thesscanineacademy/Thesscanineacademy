@@ -25,12 +25,11 @@
         }
 
         a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; padding: 0; }
 
         /* --- HEADER --- */
         header {
             background-color: #000;
-            padding: 20px 5%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -47,20 +46,23 @@
             text-decoration: none;
         }
 
-        /* Τεχνική για να φαίνεται μόνο το πάνω μέρος της εικόνας (το σήμα) */
+        /* Το "παράθυρο" που δείχνει μόνο το κυκλικό σήμα */
         .logo-container {
-            width: 70px; /* Πλάτος του σήματος */
-            height: 70px; /* Ύψος του σήματος */
-            overflow: hidden; /* Κρύβει οτιδήποτε βγαίνει έξω από τα όρια (δηλ. τα γράμματα) */
+            width: 65px; 
+            height: 65px; 
+            overflow: hidden; 
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
+            border-radius: 50%;
         }
 
         .site-logo {
-            width: 110px; /* Μεγαλώνουμε την εικόνα για να εστιάσουμε στο σήμα */
+            width: 135px; /* Μεγέθυνση για να εστιάσουμε στον κύκλο */
             height: auto;
-            margin-top: -5px; /* Μετακίνηση για να κεντραριστεί το κυκλικό σήμα */
+            display: block;
+            /* Μετακινεί την εικόνα πάνω για να εξαφανιστούν τα γράμματα που έχει η ίδια η εικόνα */
+            transform: translateY(-8px); 
         }
 
         .logo-text {
@@ -72,15 +74,9 @@
             line-height: 1.2;
         }
 
-        @media (max-width: 768px) {
-            .logo-text { font-size: 1.1rem; letter-spacing: 1px; }
-            .logo-container { width: 50px; height: 50px; }
-            .site-logo { width: 80px; }
-        }
-
         nav a {
             color: #fff;
-            margin-left: 15px;
+            margin-left: 20px;
             font-size: 0.85rem;
             text-transform: uppercase;
             font-weight: 600;
@@ -91,16 +87,13 @@
         /* --- HERO CAROUSEL --- */
         .carousel-container {
             position: relative;
-            height: 85vh;
+            height: 80vh;
             overflow: hidden;
         }
 
         .carousel-slide {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             opacity: 0;
             transition: opacity 1s ease-in-out;
             background-size: cover;
@@ -111,10 +104,7 @@
 
         .hero-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.6);
             display: flex;
             flex-direction: column;
@@ -132,208 +122,27 @@
             padding-bottom: 10px;
         }
 
-        .hero-overlay p {
-            font-size: 1.2rem;
-            margin-top: 20px;
-            color: var(--primary-gold);
-            letter-spacing: 1px;
-        }
-
         /* --- SECTIONS --- */
-        section {
-            padding: 80px 10%;
-            border-bottom: 1px solid #333;
-        }
+        section { padding: 80px 10%; border-bottom: 1px solid #333; }
+        h2 { font-size: 2.2rem; text-transform: uppercase; border-left: 5px solid var(--primary-gold); padding-left: 20px; margin-bottom: 40px; }
 
-        h2 {
-            font-size: 2.2rem;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-            border-left: 5px solid var(--primary-gold);
-            padding-left: 20px;
-            color: #fff;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .card {
-            background-color: var(--section-bg);
-            padding: 30px;
-            border: 1px solid #333;
-            border-radius: 4px;
-        }
-
-        .fact-card {
-            text-align: center;
-            border: 1px solid var(--primary-gold);
-        }
-
-        .fact-number {
-            font-size: 3rem;
-            color: var(--primary-gold);
-            font-weight: bold;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .video-box {
-            width: 100%;
-            height: 250px;
-            background-color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #555;
-            margin-bottom: 15px;
-            border: 1px solid #444;
-            position: relative;
-        }
-        .play-icon { font-size: 30px; color: var(--primary-gold); }
-
-        .article-card h3 { color: var(--primary-gold); margin-top: 0; }
-        
-        .full-content {
-            display: none;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #444;
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            text-align: justify;
-        }
-
-        .read-toggle-btn {
-            background: none;
-            border: none;
-            color: var(--primary-gold);
-            cursor: pointer;
-            font-weight: bold;
-            padding: 10px 0;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-        }
-
-        .read-toggle-btn:hover { text-decoration: underline; }
-
+        /* --- FORM --- */
+        form { background: var(--section-bg); padding: 30px; border-radius: 8px; }
         input, textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            background-color: #0d0d0d;
-            border: 1px solid #444;
-            color: #fff;
-            box-sizing: border-box;
-            font-family: inherit;
+            width: 100%; padding: 15px; margin-bottom: 15px;
+            background-color: #0d0d0d; border: 1px solid #444; color: #fff;
+            box-sizing: border-box; font-family: inherit;
         }
-
-        input:focus, textarea:focus { outline: none; border-color: var(--primary-gold); }
-
         button[type="submit"] {
-            width: 100%;
-            padding: 15px;
-            background-color: var(--primary-gold);
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
-            color: #000;
+            width: 100%; padding: 15px; background-color: var(--primary-gold);
+            border: none; font-weight: bold; cursor: pointer; text-transform: uppercase;
         }
 
-        footer {
-            background-color: #000;
-            padding: 40px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        .social-links a {
-            margin: 0 10px;
-            color: var(--primary-gold);
-            font-weight: bold;
-        }
+        footer { background-color: #000; padding: 40px; text-align: center; color: #777; font-size: 0.9rem; }
 
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; }
-            .hero-overlay h1 { font-size: 2rem; }
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .logo-text { font-size: 1.1rem; }
             nav { display: flex; flex-wrap: wrap; justify-content: center; }
-            nav a { margin: 5px 10px; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <a href="#" class="logo-wrapper">
-            <div class="logo-container">
-                <img src="logo.jpg.png" alt="Thess Canine Academy" class="site-logo">
-            </div>
-            <span class="logo-text">THESS CANINE ACADEMY</span>
-        </a>
-        <nav>
-            <a href="#about">Ποιοι Ειμαστε</a>
-            <a href="#philosophy">Φιλοσοφια</a>
-            <a href="#facts">Fun Facts</a>
-            <a href="#videos">Videos</a>
-            <a href="#articles">Blog</a>
-            <a href="#contact">Επικοινωνια</a>
-        </nav>
-    </header>
-
-    <div class="carousel-container">
-        <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
-        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
-        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1625316708582-7c38734c3121?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
-
-        <div class="hero-overlay">
-            <h1>Thess Canine Academy</h1>
-            <p>Ακρίβεια. Πειθαρχία. Αποτέλεσμα.</p>
-        </div>
-    </div>
-
-    <section id="about">
-        <h2>Ποιοι Είμαστε</h2>
-        <div class="grid">
-            <div class="bio-text">
-                <p>Στην <strong>Thess Canine Academy</strong>, παρέχουμε επαγγελματική εκπαίδευση σκύλων με έμφαση στην επικοινωνία, την κατανόηση της συμπεριφοράς και την ισορροπία στην καθημερινότητα.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Επικοινωνήστε Μαζί Μας</h2>
-        <div class="grid">
-            <div>
-                <p><strong>Τηλέφωνο:</strong> +30 6976449651</p>
-                <p><strong>Email:</strong> thesscanineacademy@gmail.com</p>
-                <div class="social-links">
-                    <a href="#" target="_blank">Facebook</a> |
-                    <a href="#" target="_blank">Instagram</a> |
-                    <a href="#" target="_blank">TikTok</a>
-                </div>
-            </div>
-            
-            <form action="https://formspree.io/f/mjgknaoq" method="POST">
-                <input type="text" name="name" placeholder="Το Όνομά σας" required>
-                <input type="email" name="email" placeholder="Το Email σας" required>
-                <input type="text" name="dog_info" placeholder="Ράτσα & Ηλικία Σκύλου" required>
-                <input type="tel" name="phone" placeholder="Τηλέφωνο" required>
-                <textarea name="message" rows="5" placeholder="Ποιο είναι το κυριότερο πρόβλημα;" required></textarea>
-                <button type="submit">ΑΠΟΣΤΟΛΗ ΜΗΝΥΜΑΤΟΣ</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        &copy; 2025 Thess Canine Academy. All Rights Reserved.
-    </footer>
-
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
